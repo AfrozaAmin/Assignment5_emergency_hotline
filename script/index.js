@@ -101,7 +101,7 @@ heartButtonCount.forEach(btn=> {
 
 
 
-document.querySelectorAll(".call-btn").addEventListener("click",function(){
+document.getElementById("call-btn1").addEventListener("click",function(){
   const currentTime= new Date();
   const timeString=currentTime.toLocaleTimeString();
 
@@ -117,4 +117,20 @@ document.querySelectorAll(".call-btn").addEventListener("click",function(){
 })
 
 
+let copyCount=0;
+ document.getElementById("copyBtn1").addEventListener("click", function() {
+   copyCount++;
+        document.getElementById("copyCount").innerText = copyCount;
+ })
 
+
+
+function getElement(id)
+{
+  const element=document.getElementById(id);
+  return element;
+}
+  getElement("all-cards").addEventListener("click",function(e){
+    if(e.target.className.includes("button"))
+    alert("card is clicked");
+  })
