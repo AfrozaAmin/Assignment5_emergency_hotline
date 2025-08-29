@@ -98,9 +98,22 @@ heartButtonCount.forEach(btn=> {
   })
 })
 
-const call=document.querySelectorAll(".callbtn")
-for(let i=0;i<call.length();i++){
-call.addEventListener("click",function(){
+// const call=document.querySelectorAll(".callbtn")
+// for(let i=0;i<call.length();i++){
+// call.addEventListener("click",function(){
+
+// })
+// }
+
+// call history
+document.getElementById("call-btn").addEventListener("click",function(){
+  const currentTime= new Date();
+  const timeString=currentTime.toLocaleTimeString();
+
+  const updateHistory=document.createElement("updateHistory");
+  updateHistory.innerText=timeString;
+  document.getElementById("History").appendChild(updateHistory);
+
 
 })
-}
+
