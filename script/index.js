@@ -88,81 +88,33 @@
 // //  putHeart("9 ");
 // // })
 
-// let count=0;
-// const heartButton=document.getElementById("heartButton");
-// const heartButtonCount=document.querySelectorAll(".button")
-// heartButtonCount.forEach(btn=> {
-//   btn.addEventListener("click",()=>{
-//     Total=count++;
-//     heartButton.textContent= Total;
-//   })
-// })
-
-// // const call=document.querySelectorAll(".callbtn")
-// // for(let i=0;i<call.length();i++){
-// // call.addEventListener("click",function(){
-
-// // })
-// // }
-
-// // call history
-
-// document.getElementById("call-btn6").addEventListener("click",function(){
-//   const currentTime= new Date();
-//   const timeString=currentTime.toLocaleTimeString();
-
-//   const updateHistory=document.createElement("updateHistory");
-//   updateHistory.innerText=timeString;
-//   document.getElementById("History6").appendChild(updateHistory);
+let count=1;
+const heartButton=document.getElementById("heartButton");
+const heartButtonCount=document.querySelectorAll(".button")
+heartButtonCount.forEach(btn=> {
+  btn.addEventListener("click",()=>{
+    Total=count++;
+    heartButton.textContent= Total;
+  })
+})
 
 
-//   // clear button 
-//   document.getElementById("Clearbtn").addEventListener("click",function(){
-//     document.getElementById("History1").innerHTML="";
-//   })
-// })
 
 
-// document.querySelectorAll(".call-btn").forEach(btn => {
-//       btn.addEventListener("click", function() {
-//         const serviceName = this.parentElement.querySelector("h1").innerText;
-//         const serviceNumber = this.parentElement.querySelector(".hotline").innerText;
-//         const time = new Date().toLocaleTimeString();
+document.querySelectorAll(".call-btn").addEventListener("click",function(){
+  const currentTime= new Date();
+  const timeString=currentTime.toLocaleTimeString();
 
-//         const updateHistory= document.createElement("updateHistory");
-//        updateHistory.innerText = `${serviceName} (${serviceNumber}) — ${time}`;
-//         document.getElementById("callHistory").appendChild(updateHistory);
-//       });
-//     });
-
-//     // Clear History button
-//     document.getElementById("clearHistory").addEventListener("click", function() {
-//       document.getElementById("callHistory").innerHTML = "";
-//     });
+  const updateHistory=document.createElement("updateHistory");
+  updateHistory.innerText=timeString;
+  document.getElementById("callHistory").appendChild(updateHistory);
 
 
-document.querySelectorAll(".call-btn").forEach(btn => {
-  btn.addEventListener("click", function() {
-    const card = this.closest("div");  // find parent card
-    const serviceName = card.querySelector("h1").innerText;
-    const serviceNumber = card.querySelector("p.font-bold").innerText;
-    const time = new Date().toLocaleTimeString();
+  // clear button 
+  document.getElementById("ClearHistory").addEventListener("click",function(){
+    document.getElementById("callHistory").innerHTML="";
+  })
+})
 
-    const historyItem = document.createElement("div");
-    historyItem.className = "flex items-center justify-between bg-[#fafafa] mb-2 p-2";
-    historyItem.innerHTML = `
-      <div>
-        <h1 class="font-semibold">${serviceName}</h1>
-        <p class="text-gray-600">${serviceNumber}</p>
-      </div>
-      <div>
-        <p class="text-gray-700">${time}</p>
-      </div>
-    `;
-    document.getElementById("historyList").appendChild(historyItem);
-  });
-});
 
-document.getElementById("clearHistory").addEventListener("click", function() {
-  document.getElementById("historyList").innerHTML = "";
-});
+
